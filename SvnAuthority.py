@@ -116,18 +116,14 @@ def delSvn(postData):
         return False
     else:
         return True
-
-
 if __name__ == "__main__":
 
     if len(sys.argv) == 1:
         print("请传入rw(读写权限)或者remove(删除授权)参数")
         exit(1)
-
       #  第一步：登录，密码加密
     svnLogin("user", "pw")
     svnSession.cookies.load()
-
     if sys.argv[1] == "rw":
         for line in open("item.txt"):
             for saveItem in pjauthDataRW:
